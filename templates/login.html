@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <style>
+    body {
+        background-image: url("{{ url_for('static', filename='images/login.jpg') }}");
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        flex-direction: column;
+        background-color: #cfd4d9;
+    }
+
+    h1 {
+        color: #27566A;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+        text-align: center;
+        color: #4E808B;
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    p {
+        text-align: center;
+        color: #487678;
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    form {
+        background-color: rgba(143, 239, 253, 0.9);
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        color: #27566A;
+        font-size: 1rem;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #4E808B;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    input[type="submit"] {
+        background-color: #53B6BD;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        color: white;
+        font-size: 1rem;
+        border-radius: 5px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #459BA1;
+    }
+
+    .show-password {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .show-password input {
+        margin-left: 5px;
+    }    </style>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
+</head>
+    <body>
+        <h1>WANNA MAKE PLATE FOR THE PURPOSE!!</h1>
+        <h2>LOG IN</h2>
+        <form action="/login_submit" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <div class="show-password">
+                <label for="showPassword">Show Password</label>
+                <input type="checkbox" id="showPassword" onclick="togglePasswordVisibility()">
+            </div>
+            <input type="submit" value="Log In">
+        </form>
+        <p>New User? <a href="{{ url_for('user_register') }}">Register Now</a></p>
+        
+    </body>
+</html>

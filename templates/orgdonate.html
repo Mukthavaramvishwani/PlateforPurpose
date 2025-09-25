@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orgdonate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('food2.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            text-align: left;
+            padding: 20px;
+        }
+
+        header h1 {
+            color: rgb(89, 128, 60);
+            margin: 0;
+        }
+
+        main {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        section h2 {
+            color: #3c3b1c;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #246f7d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        aside {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 50%;
+            height: 100%;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>wanna releive your hunger..</h1>
+    </header>
+    <main>
+        <section>
+            <h2>fill for food</h2>
+            <form action="/submit-donation" method="post">
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required><br><br>
+                
+                <button type="submit">submit</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

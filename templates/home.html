@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='images/home.avif') }}");
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align items to the top of the container */
+            height: 100vh;
+            margin: 0;
+        }
+        
+        header {
+            text-align: center;
+            margin-top: 100px; /* Adjust as needed for spacing from the top */
+        }
+        
+        header h1 {
+            color: hwb(341 3% 60% / 0.973); /* Red color for h1 */
+            font-size: xx-large;
+            font-weight: bolder;
+            margin: 0; /* Remove default margin */
+        }
+        
+        nav {
+            text-align: center;
+            margin-top: 20px; /* Adjust as needed for spacing below the h1 */
+        }
+        
+        nav a {
+            color: rgb(176, 63, 57); /* Crimson color for the link */
+            text-decoration: none; /* Remove underline from link */
+            font-size: 16px; /* Adjust font size as needed */
+            display: block;
+        }
+        
+        nav a:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
+        
+        .logout-button{
+  position: absolute;
+  top: 10px; /* Adjust this value as needed */
+  right: 10px; /* Adjust this value as needed */
+  background-color: #ff0000; /* Change this to your preferred button color */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+        
+        .logout-button a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="logout-button">
+        <a href="{{ url_for('logout') }}">Log Out</a>
+    </div>
+
+    <header>
+        <h1>Welcome to PLATE FOR THE PURPOSE</h1>
+    </header>
+
+    <nav>
+        <p>Ready to make the plate (donate food)</p>
+    </nav>
+</body>
+</html>

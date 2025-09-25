@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <style>
+        body {
+            background-image: url('donate.jpg'); /* Replace with the path to your background image */
+            background-position: center;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #ff6347; /* Tomato color */
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .details {
+            background-color: rgba(3, 54, 42, 0.89);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .details p {
+            margin: 10px 0;
+        }
+
+        .org-name {
+            color: #4caf50; /* Green color */
+        }
+
+        .location {
+            color: #2196f3; /* Blue color */
+        }
+
+        .delivery-guy-name {
+            color: #ff9800; /* Orange color */
+        }
+
+        .delivery-guy-number {
+            color: #e91e63; /* Pink color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Organization Details</h1>
+    <div class="details">
+        <!-- These details should be dynamically fetched from the database -->
+        <p class="org-name">Organization Name: <span id="orgName"></span></p>
+        <p class="location">Location: <span id="location"></span></p>
+        <p class="delivery-guy-name">Delivery Guy Name: <span id="deliveryGuyName"></span></p>
+        <p class="delivery-guy-number">Delivery Guy Number: <span id="deliveryGuyNumber"></span></p>
+    </div>
+
+    <script>
+        // Simulate fetching data from a database
+        document.addEventListener('DOMContentLoaded', function() {
+            // Replace the following data with the actual data from your database
+            const orgData = {
+                orgName: 'Sharada Orphanage',
+                location: 'Vanasthalipuram',
+                deliveryGuyName: 'vikas',
+                deliveryGuyNumber: '8743224657'
+            };
+
+            document.getElementById('orgName').textContent = orgData.orgName;
+            document.getElementById('location').textContent = orgData.location;
+            document.getElementById('deliveryGuyName').textContent = orgData.deliveryGuyName;
+            document.getElementById('deliveryGuyNumber').textContent = orgData.deliveryGuyNumber;
+        });
+    </script>
+</body>
+</html>

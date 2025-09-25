@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Plate for Purpose</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/signup.jpg') }}");
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+            color: white; /* Default text color */
+        }
+
+        h1 {
+            color: #522b59; /* Dark purple color for the heading */
+            font-size: 3em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5); /* Adding some shadow to the heading */
+        }
+        
+        p {
+            color: #2c6671; /* Dark cyan color for the paragraph */
+            font-size: 2em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5); /* Adding some shadow to the paragraph */
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .buttons button {
+            background-color: #1e90ff; /* Dodger blue color for buttons */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buttons button:hover {
+            background-color: #1c86ee; /* Slightly darker blue for hover state */
+        }
+
+        .buttons button.organization {
+            background-color: #ff6347; /* Tomato color for Organization button */
+        }
+
+        .buttons button.organization:hover {
+            background-color: #e55342; /* Darker tomato color for hover state */
+        }
+
+        .buttons button.user {
+            background-color: #32cd32; /* Lime green color for User button */
+        }
+
+        .buttons button.user:hover {
+            background-color: #28a428; /* Darker lime green color for hover state */
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Plate for Purpose</h1>
+    <p>Select User to donate or Organization for food</p>
+    <div class="buttons">
+        <button onclick="window.location.href='/org_login';" class="organization">Organization</button>
+        <button onclick="window.location.href='/user_login';" class="user">User</button>
+    </div>
+</body>
+</html>
